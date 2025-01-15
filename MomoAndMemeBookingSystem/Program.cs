@@ -1,8 +1,13 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MomoAndMemeBookingSystem.Data;
 using MomoAndMemeBookingSystem.Models;
 using MomoAndMemeBookingSystem.Services;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Identity.UI.Services;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +16,9 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddTransient<EmailService>();
+
+
+
 
 // Configure Entity Framework to use PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -26,6 +34,21 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 // Add MVC controllers and views
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddGoogle(googleOptions =>
+{
+    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+});
+
+
 
 var app = builder.Build();
 
@@ -70,6 +93,8 @@ else
 // Configure HTTPS redirection and static file serving
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseRouting();
 

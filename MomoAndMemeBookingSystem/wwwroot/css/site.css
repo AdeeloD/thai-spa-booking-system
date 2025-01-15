@@ -102,10 +102,14 @@ form .btn-success:hover {
         border-radius: 5px;
     }
 .card-img-top {
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
+    max-height: 200px; 
+    object-fit: scale-down; 
+    width: 100%; 
+    border-radius: 10px 10px 0 0; 
+    display: block; 
+    margin: 0 auto; 
 }
+
 
 .card-body h5 {
     font-weight: bold;

@@ -7,7 +7,8 @@
         {
             <div class="col-md-4 mb-4">
                 <div class="card shadow-sm">
-                    <img src="~/images/masseurs/@masseur.Image" class="card-img-top" alt="@masseur.FullName" />
+                    <img src="@Url.Content("~/images/masseurs/" + masseur.Image)" class="card-img-top" alt="@masseur.FullName" />
+
                     <div class="card-body text-center">
                         <h5 class="card-title">@masseur.FullName</h5>
                         <p class="card-text">@masseur.Bio</p>
