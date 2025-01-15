@@ -1,0 +1,61 @@
+:root {
+    --primary-color: #808000;
+    --secondary-color: #556B2F;
+    --accent-color: #DAA520;
+    --light-color: #F5F5DC;
+}
+
+.btn-thai {
+    background-color: var(--primary-color);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+    .btn-thai:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+.service-card {
+    transition: all 0.3s ease;
+}
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+.text-accent {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image {
+    object-fit: cover;
+    height: 400px;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.thai-border {
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    background-color: var(--light-color);
+}
