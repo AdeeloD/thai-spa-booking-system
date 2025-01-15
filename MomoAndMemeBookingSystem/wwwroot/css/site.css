@@ -1,61 +1,113 @@
-:root {
-    --primary-color: #808000;
-    --secondary-color: #556B2F;
-    --accent-color: #DAA520;
-    --light-color: #F5F5DC;
+/* Alapbeállítások */
+body {
+    background-color: #e1e7b7; /* Világos olive szín */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.btn-thai {
-    background-color: var(--primary-color);
+.navbar {
+    background-color: #556b2f; /* Sötétebb olive szín */
     color: white;
-    transition: all 0.3s ease;
 }
 
-    .btn-thai:hover {
-        background-color: var(--secondary-color);
-        color: white;
-        transform: translateY(-2px);
+    .navbar a {
+        color: white !important;
     }
 
-.service-card {
-    transition: all 0.3s ease;
+.footer {
+    background-color: #556b2f;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
 
-    .service-card:hover {
-        transform: translateY(-5px);
+.panda-logo {
+    width: 50px;
+    height: auto;
+}
+
+/* Reszponzív design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
     }
 
-.text-accent {
-    color: var(--accent-color);
+    .footer {
+        font-size: 14px;
+    }
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+.text-success {
+    color: #556b2f !important;
+}
+form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+ form .form-label {
+        font-weight: bold;
+       color: #556b2f;
+
+ }
+  form .btn-success {
+        background-color: #556b2f;
+        border: none;
+
+  }
+form .btn-success:hover {
+        background-color: #6b8e23;
+ }
+.card-header {
     font-weight: bold;
+    text-transform: uppercase;
 }
 
-.hero-section {
-    position: relative;
+.card {
+    border-radius: 10px;
     overflow: hidden;
 }
 
-.hero-image {
+.card-body {
+    background-color: #f5f5dc;
+    padding: 20px;
+}
+
+    .card-body label {
+        font-weight: bold;
+        color: #556b2f;
+    }
+
+    .card-body .btn-success {
+        background-color: #556b2f;
+        border: none;
+        transition: background-color 0.3s;
+    }
+
+        .card-body .btn-success:hover {
+            background-color: #6b8e23;
+        }
+
+    .card-body input,
+    .card-body select {
+        border-radius: 5px;
+    }
+.card-img-top {
+    height: 200px;
     object-fit: cover;
-    height: 400px;
+    border-radius: 10px 10px 0 0;
 }
 
-.hero-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.4);
-}
-
-.hero-content {
-    z-index: 1;
-}
-
-.thai-border {
-    border: 2px solid var(--accent-color);
-    border-radius: 10px;
-    background-color: var(--light-color);
+.card-body h5 {
+    font-weight: bold;
+    color: #556b2f;
 }

@@ -3,172 +3,65 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Massage Sanguanwong - Thai Massage & Wellness</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <style>
-        :root {
-            --primary-color: #808000;
-            --secondary-color: #556B2F;
-            --accent-color: #DAA520;
-            --light-color: #F5F5DC;
-        }
+    <title>Momo & Meme - Thai Massage</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-color);
-        }
-
-        .navbar {
-            background-color: var(--primary-color) !important;
-            padding: 1rem;
-        }
-
-        .navbar-brand {
-            color: white !important;
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar-brand img {
-            margin-right: 10px;
-        }
-
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            margin: 0 0.2rem;
-            border-radius: 5px;
-        }
-
-        .nav-link:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        .navbar-toggler {
-            border-color: white;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        .logo-img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .container {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer {
-            background-color: var(--primary-color);
-            color: white !important;
-            padding: 1rem 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .footer a {
-            color: var(--accent-color) !important;
-        }
-
-        /* Thai decorative elements */
-        .thai-border {
-            border: 2px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 20px;
-            background-image: url('/api/placeholder/100/100');
-            background-repeat: repeat;
-            background-size: 50px;
-            background-opacity: 0.1;
-        }
-
-        /* Button styling */
-        .btn-thai {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-thai:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-            color: white;
-        }
-    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Custom Styles -->
+    <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #556b2f;">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Massage Sanguanwong</a>
+                    <img src="~/images/panda.png" alt="Panda Logo" style="width: 50px; height: auto; margin-right: 10px;" />
+                    Momo & Meme
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">
-                                <i class="fas fa-home"></i> Home
-                            </a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="MassageTypes" asp-action="Index">
-                                <i class="fas fa-spa"></i> Massage Types
-                            </a>
+                            <a class="nav-link" asp-controller="MassageTypes" asp-action="Index"><i class="fas fa-spa"></i> Massage Types</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Masseurs" asp-action="Index">
-                                <i class="fas fa-user-friends"></i> Masseurs
-                            </a>
+                            <a class="nav-link" asp-controller="Masseurs" asp-action="Index"><i class="fas fa-user-friends"></i> Masseurs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Bookings" asp-action="Index">
-                                <i class="fas fa-calendar-alt"></i> Bookings
-                            </a>
+                            <a class="nav-link" asp-controller="Bookings" asp-action="Index"><i class="fas fa-calendar-alt"></i> Bookings</a>
                         </li>
                     </ul>
-                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container thai-border">
+
+    <div class="container mt-4">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-    <footer class="footer">
+
+    <footer class="footer mt-4" style="background-color: #556b2f; color: white; padding: 15px;">
         <div class="container text-center">
-            <span>&copy; 2025 - Massage Sanguanwong - </span>
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <span>&copy; 2025 Momo & Meme - All Rights Reserved.</span>
+            <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-white ms-2">Privacy</a>
             <div class="mt-2">
                 <i class="fas fa-phone me-2"></i> Contact: +36 123 456 789
-                <i class="fas fa-envelope ms-3 me-2"></i> Email: info@massagesanguanwong.com
+                <i class="fas fa-envelope ms-3 me-2"></i> Email: info@momoandmeme.com
             </div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap and custom scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

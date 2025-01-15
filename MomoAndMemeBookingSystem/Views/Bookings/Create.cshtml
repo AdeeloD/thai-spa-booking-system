@@ -1,61 +1,63 @@
 ﻿@model MomoAndMemeBookingSystem.Models.Booking
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Booking";
 }
 
-<h1>Create</h1>
-
-<h4>Booking</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" type="datetime-local" />
-                <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="MassageTypeId" class="control-label"></label>
-                <select asp-for="MassageTypeId" class ="form-control" asp-items="ViewBag.MassageTypeId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="MasseurId" class="control-label"></label>
-                <select asp-for="MasseurId" class ="form-control" asp-items="ViewBag.MasseurId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerName" class="control-label"></label>
-                <input asp-for="CustomerName" class="form-control" />
-                <span asp-validation-for="CustomerName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerEmail" class="control-label"></label>
-                <input asp-for="CustomerEmail" class="form-control" />
-                <span asp-validation-for="CustomerEmail" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-            <div class="form-group">
-                <label asp-for="MasseurId" class="control-label"></label>
-                <select asp-for="MasseurId" class="form-control" asp-items="ViewBag.MasseurId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="MassageTypeId" class="control-label"></label>
-                <select asp-for="MassageTypeId" class="form-control" asp-items="ViewBag.MassageTypeId"></select>
-            </div>
-
-        </form>
+<div class="container my-5">
+    <div class="card shadow">
+        <div class="card-header text-center bg-success text-white">
+            <h2>Book Your Massage</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="CustomerName" class="form-label">
+                            <i class="fas fa-user me-2"></i> Full Name
+                        </label>
+                        <input asp-for="CustomerName" class="form-control" placeholder="Enter your name" />
+                        <span asp-validation-for="CustomerName" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="CustomerEmail" class="form-label">
+                            <i class="fas fa-envelope me-2"></i> Email Address
+                        </label>
+                        <input asp-for="CustomerEmail" class="form-control" placeholder="Enter your email" />
+                        <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="MassageTypeId" class="form-label">
+                            <i class="fas fa-spa me-2"></i> Massage Type
+                        </label>
+                        <select asp-for="MassageTypeId" class="form-select" asp-items="ViewBag.MassageTypeId"></select>
+                        <span asp-validation-for="MassageTypeId" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="MasseurId" class="form-label">
+                            <i class="fas fa-user-friends me-2"></i> Choose Masseur
+                        </label>
+                        <select asp-for="MasseurId" class="form-select" asp-items="ViewBag.MasseurId"></select>
+                        <span asp-validation-for="MasseurId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label asp-for="Date" class="form-label">
+                            <i class="fas fa-calendar-alt me-2"></i> Select Date & Time
+                        </label>
+                        <input asp-for="Date" class="form-control" type="datetime-local" />
+                        <span asp-validation-for="Date" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg px-5">
+                        <i class="fas fa-check me-2"></i> Confirm Booking
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

@@ -1,41 +1,19 @@
 ﻿@model IEnumerable<MomoAndMemeBookingSystem.Models.Masseur>
 
-@{
-    ViewData["Title"] = "Index";
-}
-
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bio)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bio)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container mt-5">
+    <h1 class="text-center text-success mb-4">Meet Our Masseurs</h1>
+    <div class="row">
+        @foreach (var masseur in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img src="~/images/masseurs/@masseur.Image" class="card-img-top" alt="@masseur.FullName" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@masseur.FullName</h5>
+                        <p class="card-text">@masseur.Bio</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

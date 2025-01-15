@@ -13,5 +13,6 @@ namespace MomoAndMemeBookingSystem.Models
 
         [MaxLength(500)]
         public string? Bio { get; set; }
+        public required string Image { get; set; }
     }
 }

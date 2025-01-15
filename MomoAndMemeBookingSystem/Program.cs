@@ -44,8 +44,8 @@ using (var scope = app.Services.CreateScope())
     if (!context.Masseurs.Any())
     {
         context.Masseurs.AddRange(
-            new Masseur { FullName = "John Doe", Bio = "Expert in Thai massage" },
-            new Masseur { FullName = "Jane Smith", Bio = "Specializes in relaxation techniques" }
+            new Masseur { FullName = "John Doe", Bio = "Expert in Thai massage" ,Image="1.png"},
+            new Masseur { FullName = "Jane Smith", Bio = "Specializes in relaxation techniques",Image="2.jpeg" }
         );
     }
 
